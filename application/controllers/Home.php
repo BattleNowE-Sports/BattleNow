@@ -20,6 +20,11 @@ class Home extends CI_Controller {
         $this->load->view('login_view');       
 	}
 
+  public function cerrarS(){
+        $this->session->sess_destroy('info');
+        redirect('Home');
+  }
+
 	public function loginBD(){
 		$usu = new Usuarios();
 		$cU = $this->input->post('ucher');
@@ -65,8 +70,5 @@ class Home extends CI_Controller {
       	$this->session->set_flashdata('Corre','Registrado con exito!!!');
       	redirect('Home/login');      	
       }
-
-
-
 	}	
 }
