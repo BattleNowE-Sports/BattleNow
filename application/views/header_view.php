@@ -16,6 +16,13 @@
     <link href="<?php echo base_url(); ?>css/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cambay&display=swap" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript">
+    function cargar(){
+        if(document.getElementsByID('reg').value == "(Cambiar nombre de usuario)"){
+            document.getElementsByID('reg').style.visibility="hidden";
+        }
+    }
+    </script>
     <style>
         header{
             background-color: #000000;
@@ -34,7 +41,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="cargar()">
     <header class="pt-md-2">
         <hgroup class="text-center text-white">
             <img src="<?php echo base_url(); ?>img/logo.png" class="img-fluid">
@@ -60,8 +67,16 @@
               <li class="nav-item">
                     <a class="nav-link active" href="http://localhost/BattleNow/index.php/Home/login/">Inicio de Sesion / Registro</a>
               </li>
-              <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active pull-xs-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">(Cambiar por nombre de usuario)</a>
+              <li class="nav-item dropdown" id="reg">
+                    <a class="nav-link dropdown-toggle active pull-xs-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      <?php
+                        if(!$this->session->userdata('usuario')){
+                            echo "(Cambiar nombre de usuario)";
+                        }else{
+                            echo $this->session->userdata('usuario');
+                        }
+                      ?>
+                    </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Mi Perfil</a>
                         <div class="dropdown-divider"></div>
@@ -69,7 +84,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Mis Noticias</a> 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Cerrar Sesión</a>  
+                        <a class="dropdown-item" href="http://localhost/BattleNow/index.php/Home/cerrarS/">Cerrar Sesión</a>  
                     </div>
               </li>          
             </ul>
