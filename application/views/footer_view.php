@@ -1,11 +1,10 @@
-        <div class="row">
-            <div class="col-12">
-                <i id="icon1" class="fab fa-facebook-square fa-5x"></i>
-                <i id="icon2" class="fab fa-twitter fa-5x"></i>
-                <i id="icon3" class="fab fa-instagram fa-5x"></i>
-                <i id="icon4" class="fab fa-instagram fa-5x"></i>
-            </div>
-        </div>
     </div>
+    <footer>
+        <div class="col-12">
+            <i class="fa fa-facebook-square fa-3x"></i>
+            <i class="fa fa-twitter fa-3x"></i>
+            <i class="fa fa-instagram fa-3x"></i>
+        </div>
+    </footer>
 </body>
 </html>
