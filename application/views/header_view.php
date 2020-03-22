@@ -48,7 +48,7 @@
               <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Call of Duty</a>
+                        <a class="dropdown-item" href="#">Call of DutyAAAA</a>
                         <a class="dropdown-item" href="#">Clash Royale</a>
                         <a class="dropdown-item" href="#">Counter Strike</a>
                         <a class="dropdown-item" href="#">League of Legends</a> 
