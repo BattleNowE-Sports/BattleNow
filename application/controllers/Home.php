@@ -31,26 +31,26 @@ class Home extends CI_Controller {
 		$pas = $this->input->post('pass');
 
        if($this->input->post('modo') == "corr"){
-         $res = $usu->IniciarSBDCorr($cU,$pas);
-          if($res == NULL){
-         $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
-      	 redirect('Home/login');
-          }else{
-           $this->session->set_userdata('usuario',$res);
-      	   redirect('Home/index');
-          }
+            $res = $usu->IniciarSBDCorr($cU,$pas);
+            if($res == NULL){
+                $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
+                redirect('Home/login');
+            }else{
+                $this->session->set_userdata('usuario',$res);
+                redirect('Home/index');
+            }
        }else{
-       	if($this->input->post('modo') == "usu"){
-       	  $res = $usu->IniciarSBDUsu($cU,$pas);	
-          if($res == NULL){
-           $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
-      	   redirect('Home/login');
-          }else{
-      	   $this->session->set_userdata('usuario',$cU);
-      	   redirect('Home/index');
-          }
+       	    if($this->input->post('modo') == "usu"){
+       	        $res = $usu->IniciarSBDUsu($cU,$pas);	
+                if($res == NULL){
+                    $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
+                    redirect('Home/login');
+                }else{
+                    $this->session->set_userdata('usuario',$cU);
+                    redirect('Home/index');
+                }
 
-       	}
+       	    }
        }
 	}
 	public function registrarBD(){

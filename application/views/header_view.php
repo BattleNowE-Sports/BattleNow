@@ -18,8 +18,12 @@
     <link href="<?php echo base_url(); ?>css/font-awesome/css/font-awesome.css" rel="stylesheet">
     <script type="text/javascript">
     function cargar(){
-        if(document.getElementsByID('reg').value == "(Cambiar nombre de usuario)"){
-            document.getElementsByID('reg').style.visibility="hidden";
+        if(document.getElementById('registrado').value == ""){
+            document.getElementById('registrado').style.visibility="hidden";
+            document.getElementById('sinRegistrar').style.visibility="visible";
+        }else{
+            document.getElementById('registrado').style.visibility="visible";
+            document.getElementById('sinRegistrar').style.visibility="hidden";
         }
     }
     </script>
@@ -54,7 +58,7 @@
         }
     </style>
 </head>
-<body onload="cargar()">
+<body>
     <header class="pt-md-2">
         <hgroup class="text-center text-white">
             <img src="<?php echo base_url(); ?>img/logo.png" class="img-fluid">
@@ -77,28 +81,28 @@
               <li class="nav-item">
                     <a class="nav-link active" href="#">Noticias</a>
               </li>
-              <li class="nav-item">
-                    <a class="nav-link active" href="http://localhost/BattleNow/index.php/Home/login/">Inicio de Sesion / Registro</a>
-              </li>
-              <li class="nav-item dropdown" id="reg">
-                    <a class="nav-link dropdown-toggle active pull-xs-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                      <?php
-                        if(!$this->session->userdata('usuario')){
-                            echo "(Cambiar nombre de usuario)";
-                        }else{
-                            echo $this->session->userdata('usuario');
-                        }
-                      ?>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Mi Perfil</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Mi Posición</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Mis Noticias</a> 
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="http://localhost/BattleNow/index.php/Home/cerrarS/">Cerrar Sesión</a>  
-                    </div>
-              </li>          
+              <?php
+                if(!$this->session->userdata('usuario')){
+                    echo "<li class='nav-item' id='sinRegistrar'>";
+                        echo "<a class='nav-link active' href='http://localhost/BattleNow/index.php/Home/login/'>Inicio de Sesion / Registro</a>";
+                }
+                if($this->session->userdata('usuario')){
+                    echo "<li class='nav-item dropdown' id='registrado'>";
+                        echo "<a class='nav-link dropdown-toggle active pull-xs-right' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>";
+                        echo $this->session->userdata('usuario');
+                        echo "</a>";             
+                        echo "<div class='dropdown-menu'>";
+                            echo "<a class='dropdown-item' href='#'>Mi Perfil</a>";
+                            echo "<div class='dropdown-divider'></div>";
+                            echo "<a class='dropdown-item' href='#'>Mi Posición</a>";
+                            echo "<div class='dropdown-divider'></div>";
+                            echo "<a class='dropdown-item' href='#'>Mis Noticias</a>"; 
+                            echo "<div class='dropdown-divider'></div>";
+                            echo "<a class='dropdown-item' href='http://localhost/BattleNow/index.php/Home/cerrarS/'>Cerrar Sesión</a>";  
+                        echo "</div>";
+                }
+                echo "</li>";
+              ?>
+                        
             </ul>
     </header>
