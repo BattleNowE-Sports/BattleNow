@@ -26,6 +26,9 @@
     <style>
         header{
             background-color: #000000;
+            float: left;
+            position: relative;
+            width: 100%;
         }
         .nav,.nav-link{
             background-color: #b5a269;
@@ -35,9 +38,19 @@
         .nav-link:hover{
             color: #343a40;
         }
+        article{
+            float: left;
+            position: relative;
+            height: 70%;
+            text-align: center;
+        }
         footer{
             background-color: #b5a269;
             color: white;
+            text-align: right;
+            float: left;
+            position: relative;
+            width: 100%;
         }
     </style>
 </head>
@@ -50,7 +63,7 @@
         <hr>
             <ul class="nav">
               <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="#">Battle Now</a>
+                    <a class="nav-link active navbar-brand" href="<?php echo base_url()."index.php/Home/index"; ?>">Battle Now</a>
               </li>
               <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
