@@ -17,7 +17,7 @@ class Usuarios extends CI_Model{
        $query = $this->db->get();
        $resultado = $query->result_array();
        return $resultado;
-}
+   }
 
    public function IniciarSBDUsu($u,$p){
        $this->db->select('Correo');
@@ -27,7 +27,7 @@ class Usuarios extends CI_Model{
        $query = $this->db->get();
        $resultado = $query->result_array();
        return $resultado;
-}
+   }
 
 
 }
