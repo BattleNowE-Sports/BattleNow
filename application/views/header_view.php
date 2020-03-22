@@ -17,33 +17,60 @@
     <link href="https://fonts.googleapis.com/css?family=Cambay&display=swap" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/font-awesome/css/font-awesome.css" rel="stylesheet">
     <style>
-
+        header{
+            background-color: #000000;
+        }
+        .nav,.nav-link{
+            background-color: #b5a269;
+            color: white;
+        }
+        
+        .nav-link:hover{
+            color: #343a40;
+        }
+        footer{
+            background-color: #b5a269;
+            color: white;
+        }
     </style>
 </head>
 <body>
-	<div class="container">
-	    <ul class="nav nav-pills bg-primary">
-          <li class="nav-item">
-                <a class="nav-link active navbar-brand" href="#">Battle Now</a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link active" href="#">Inicio</a>
-          </li>
-          <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Juegos</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Call of Duty</a>
-                    <a class="dropdown-item" href="#">Clash Royale</a>
-                    <a class="dropdown-item" href="#">Counter Strike</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">League of Legends</a> 
-                </div>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link active" href="#">Usuario</a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link active" href="#">Noticias</a>
-          </li>
-        </ul>
-		<div class="row">
+    <header class="pt-md-2">
+        <hgroup class="text-center text-white">
+            <img src="<?php echo base_url(); ?>img/logo.png" class="img-fluid">
+            <h2>Para los que aman los E-Sports</h2>
+        </hgroup>
+        <hr>
+            <ul class="nav">
+              <li class="nav-item">
+                    <a class="nav-link active navbar-brand" href="#">Battle Now</a>
+              </li>
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Call of Duty</a>
+                        <a class="dropdown-item" href="#">Clash Royale</a>
+                        <a class="dropdown-item" href="#">Counter Strike</a>
+                        <a class="dropdown-item" href="#">League of Legends</a> 
+                    </div>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link active" href="#">Noticias</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link active" href="http://localhost/BattleNow/index.php/Home/login/">Inicio de Sesion / Registro</a>
+              </li>
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active pull-xs-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">(Cambiar por nombre de usuario)</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Mi Perfil</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Mi Posición</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Mis Noticias</a> 
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Cerrar Sesión</a>  
+                    </div>
+              </li>          
+            </ul>
+    </header>
