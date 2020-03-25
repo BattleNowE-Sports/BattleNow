@@ -25,6 +25,26 @@ class Home extends CI_Controller {
         redirect('Home');
   }
 
+  public function partidas(){
+    $usu = new Usuarios();
+    $juego = $this->uri->segment(3);
+
+    if($juego == "Todo"){
+       $res = $usu->BuscarTotsJuegos();
+       $data['juegos'] = $res;
+       $this->load->view('header_view');
+       $this->load->view('partidas_view',$data);
+       $this->load->view('footer_view');
+    }else{
+      $resu = $usu->BuscarParJuego($juego);
+      $array = array();
+      foreach ($resu as $n) {
+        
+      }
+    }
+
+  }
+
 	public function loginBD(){
 		$usu = new Usuarios();
 		$cU = $this->input->post('ucher');
