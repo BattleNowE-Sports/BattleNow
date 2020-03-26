@@ -2,33 +2,48 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Noticia extends CI_Model{
-   public function nuevaNoticia($noticia){
+    
+    public function nuevaNoticia($noticia){
+        $this->db->insert('noticias',$noticia);
+        return $this->db->affected_rows();
+    }
+    
+    public function mostrarNoticia($idNoticia){
+        $this->db->select('*');
+        $this->db->from('noticias');
+        $this->db->where('ID',$idNoticia);
+        $query = $this->db->get();               
+        return $query->row();
+    } 
+    
+    public function mostrarNoticias(){
+        $this->db->select('*');
+        $this->db->from('noticias');
+        $query = $this->db->get();
+        $resultado = $query->result_array();
+        return $resultado;
+    }
+    
+    public function mostrarMisNoticias($usuario){
+        $this->db->select('*');
+        $this->db->from('noticias','subscripciones');
+        $this->db->where('Correo',$c);
+        $query = $this->db->get();
+        $resultado = $query->result_array();
+        return $resultado;
+    }
 
-     $this->db->insert('noticias',$noticia);
-     return $this->db->affected_rows();
+    public function filtrarPorLiga($c,$p){
 
-   }
+    }
+    
+    public function filtrarPorEquipo($c,$p){
 
-   public function filtrarPorLiga($c,$p){
-       $this->db->select('*');
-       $this->db->from('noticias');
-       $this->db->where('Correo',$c);
-       $this->db->where('Pass',$p);
-       $query = $this->db->get();
-       $resultado = $query->result_array();
-       return $resultado;
-   }
+    }
+    
+    public function filtrarPorJugador($c,$p){
 
-   public function IniciarSBDUsu($u,$p){
-       $this->db->select('Correo');
-       $this->db->from('usuarios');
-       $this->db->where('User',$u);
-       $this->db->where('Pass',$p);
-       $query = $this->db->get();
-       $resultado = $query->result_array();
-       return $resultado;
-   }
-
+    }
 
 }
 ?>	

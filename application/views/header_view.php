@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
@@ -16,42 +17,12 @@
     <link href="<?php echo base_url(); ?>css/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cambay&display=swap" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <style>
-        header{
-            background-color: #000000;
-            float: left;
-            position: relative;
-            width: 100%;
-        }
-        .nav,.nav-link{
-            background-color: #b5a269;
-            color: white;
-        }
-        
-        .nav-link:hover{
-            color: #343a40;
-        }
-        article{
-            float: left;
-            position: relative;
-            height: 70%;
-            text-align: center;
-        }
-        footer{
-            background-color: #b5a269;
-            color: white;
-            text-align: right;
-            float: left;
-            position: relative;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/estiloGeneral.css">
 </head>
 <body>
     <header class="pt-md-2">
         <hgroup class="text-center text-white">
-            <img src="<?php echo base_url(); ?>img/logo.png" class="img-fluid">
-            <h2>Para los que aman los E-Sports</h2>
+            <img src="<?php echo base_url(); ?>img/logoBueno_1.png" class="img-fluid" id="logo">
         </hgroup>
         <hr>
             <ul class="nav">
@@ -70,20 +41,28 @@
               <li class="nav-item">
                     <a class="nav-link active" href="#">Noticias</a>
               </li>
-              <li class="nav-item">
-                    <a class="nav-link active" href="http://localhost/BattleNow/index.php/Home/login/">Inicio de Sesion / Registro</a>
-              </li>
-              <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active pull-xs-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">(Cambiar por nombre de usuario)</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Mi Perfil</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Mi Posición</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Mis Noticias</a> 
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Cerrar Sesión</a>  
-                    </div>
-              </li>          
+              <?php
+                if(!$this->session->userdata('usuario')){
+                    echo "<li class='nav-item' id='sinRegistrar'>";
+                        echo "<a class='nav-link active' href='http://localhost/BattleNow/index.php/Home/login/'>Inicio de Sesion / Registro</a>";
+                }
+                if($this->session->userdata('usuario')){
+                    echo "<li class='nav-item dropdown' id='registrado'>";
+                        echo "<a class='nav-link dropdown-toggle active pull-xs-right' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>";
+                        echo $this->session->userdata('usuario');
+                        echo "</a>";             
+                        echo "<div class='dropdown-menu'>";
+                            echo "<a class='dropdown-item' href='#'>Mi Perfil</a>";
+                            echo "<div class='dropdown-divider'></div>";
+                            echo "<a class='dropdown-item' href='#'>Mi Posición</a>";
+                            echo "<div class='dropdown-divider'></div>";
+                            echo "<a class='dropdown-item' href='#'>Mis Noticias</a>"; 
+                            echo "<div class='dropdown-divider'></div>";
+                            echo "<a class='dropdown-item' href='http://localhost/BattleNow/index.php/Home/cerrarS/'>Cerrar Sesión</a>";  
+                        echo "</div>";
+                }
+                echo "</li>";
+              ?>
+                        
             </ul>
     </header>

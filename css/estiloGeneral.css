@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+header{
+    background-color: #000000;
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 20%;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Audiowide', cursive;        
+}
+
+.nav,.nav-link{
+    background-color: #b5a269;
+    color: white;
+    width: 100%;
+    height: 10%;
+}
+
+.nav-link:hover{
+    color: #343a40;
+}
+
+article{
+    float: left;
+    position: relative;
+    text-align: center;
+}
+footer{
+    background-color: #b5a269;
+    color: white;
+    text-align: right;
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 20%;
+}
+
+#logo{
+    height: 15%;
+    width: 15%;
+}

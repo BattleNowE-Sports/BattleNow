@@ -8,65 +8,64 @@ class Home extends CI_Controller {
         $this->load->model('Usuarios');
     }	
 
-	public function index()
-	{
+    //Codificado por Gonzalo Fernández
+	public function index(){
 		$this->load->view('header_view');
         $this->load->view('index_view');
         $this->load->view('footer_view');
 	}
 
+    //Codificado por Sergio Cruz
 	public function login(){
 		$this->load->view('header_view');		
         $this->load->view('login_view');       
 	}
 
+    //Codificado por Sergio Cruz
 	public function loginBD(){
-		$usu = new Usuarios();
+        $usu = new Usuarios();
 		$cU = $this->input->post('ucher');
 		$pas = $this->input->post('pass');
-
-       if($this->input->post('modo') == "corr"){
-         $res = $usu->IniciarSBDCorr($cU,$pas);
-          if($res == NULL){
-         $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
-      	 redirect('Home/login');
-          }else{
-           $this->session->set_userdata('usuario',$res);
-      	   redirect('Home/index');
-          }
-       }else{
-       	if($this->input->post('modo') == "usu"){
-       	  $res = $usu->IniciarSBDUsu($cU,$pas);	
-          if($res == NULL){
-           $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
-      	   redirect('Home/login');
-          }else{
-      	   $this->session->set_userdata('usuario',$cU);
-      	   redirect('Home/index');
-          }
-
-       	}
-       }
-	}
+        
+        if($this->input->post('modo') == "corr"){
+            $res = $usu->IniciarSBDCorr($cU,$pas);
+            if($res == NULL){
+                $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
+                redirect('Home/login');
+            }else{
+                $this->session->set_userdata('usuario',$res);
+                redirect('Home/index');
+            }
+        }else{
+            if($this->input->post('modo') == "usu"){
+                $res = $usu->IniciarSBDUsu($cU,$pas);	
+                if($res == NULL){
+                    $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
+                    redirect('Home/login');
+                }else{
+                    $this->session->set_userdata('usuario',$cU);
+                    redirect('Home/index');
+                }
+            }
+        }
+    }
+    
+    //Codificado por Sergio Cruz
 	public function registrarBD(){
-	  $usu = new Usuarios();
-      
-      $datos['usuario'] = Array(
-           'User' => $this->input->post('user'),
-           'Pass' => $this->input->post('contra'),
-           'Correo' => $this->input->post('correo')
-      );
-
-      $res = $usu->anadirUsuario($datos['usuario']);
-      if($res == 0){
-      	$this->session->set_flashdata('ErrorAn','Ha ocurrido un error a la hora de registrarte, intentalo de nuevo más tarde');
-      	redirect('Home/login');
-      }else{
-      	$this->session->set_flashdata('Corre','Registrado con exito!!!');
-      	redirect('Home/login');      	
-      }
-
-
-
+        $usu = new Usuarios();
+        $datos['usuario'] = Array(
+            'User' => $this->input->post('user'),
+            'Pass' => $this->input->post('contra'),
+            'Correo' => $this->input->post('correo')
+        );
+        
+        $res = $usu->anadirUsuario($datos['usuario']);
+        if($res == 0){
+            $this->session->set_flashdata('ErrorAn','Ha ocurrido un error a la hora de registrarte, intentalo de nuevo más tarde');
+            redirect('Home/login');
+        }else{
+            $this->session->set_flashdata('Corre','Registrado con exito!!!');
+            redirect('Home/login');      	
+        }
 	}	
 }

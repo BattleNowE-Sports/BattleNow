@@ -1,14 +1,17 @@
 <article>
     <section>
+        <?php $To
+        foreach ($noticias as $noticia){?>
         <div class="col-md-4">
             <div class="card">
-                <img class="card-img-top img-fluid" src="img/rafting1.jpg" alt="Card image cap">
+                <img class="card-img-top img-fluid" src="<?php echo base_url(); echo $viaje['imagen']; ?>" alt="Card image cap">
                 <div class="card-block">
-                    <h4 class="card-title">(Nombre de la noticia sacado de la bbdd)</h4>
-                    <p class="card-text">(Descripción de la noticia sacada de la BBDD)</p>
-                    <a href="#" class="btn btn-primary">Ir a la noticia</a>
+                    <h4 class="card-title"><?php echo $noticia['titulo']; ?></h4>
+                    <p class="card-text"><?php echo $noticia['textoRecortado']; ?></p>
+                    <a class="btn btn-danger" href="<?php echo base_url() . "index.php/viaje/confirmarReserva/" . $indice?>">Ir a la noticia</a>
                 </div>
             </div>
         </div>
+        <?php}?>
     </section>
 </article>
