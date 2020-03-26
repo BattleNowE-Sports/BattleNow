@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
@@ -16,52 +17,12 @@
     <link href="<?php echo base_url(); ?>css/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cambay&display=swap" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <script type="text/javascript">
-    function cargar(){
-        if(document.getElementById('registrado').value == ""){
-            document.getElementById('registrado').style.visibility="hidden";
-            document.getElementById('sinRegistrar').style.visibility="visible";
-        }else{
-            document.getElementById('registrado').style.visibility="visible";
-            document.getElementById('sinRegistrar').style.visibility="hidden";
-        }
-    }
-    </script>
-    <style>
-        header{
-            background-color: #000000;
-            float: left;
-            position: relative;
-            width: 100%;
-        }
-        .nav,.nav-link{
-            background-color: #b5a269;
-            color: white;
-        }
-        
-        .nav-link:hover{
-            color: #343a40;
-        }
-        article{
-            float: left;
-            position: relative;
-            height: 70%;
-            text-align: center;
-        }
-        footer{
-            background-color: #b5a269;
-            color: white;
-            text-align: right;
-            float: left;
-            position: relative;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/estiloGeneral.css">
 </head>
 <body>
     <header class="pt-md-2">
         <hgroup class="text-center text-white">
-            <img width="20%" height="20%" src="<?php echo base_url(); ?>img/logo.png" class="img-fluid">
+            <img src="<?php echo base_url(); ?>img/logoBueno_1.png" class="img-fluid" id="logo">
         </hgroup>
         <hr>
             <ul class="nav">
@@ -69,16 +30,16 @@
                     <a class="nav-link active navbar-brand" href="<?php echo base_url()."index.php/Home/index"; ?>">Battle Now</a>
               </li>
               <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="<?php echo base_url()."index.php/Home/partidas/Todo"; ?>" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
+                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/COD"; ?>">Call of Duty</a>
-                        <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/CR"; ?>">Clash Royale</a>
-                        <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/CSGO"; ?>">Counter Strike</a>
-                        <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/LOL"; ?>">League of Legends</a> 
+                        <a class="dropdown-item" href="#">Call of Duty</a>
+                        <a class="dropdown-item" href="#">Clash Royale</a>
+                        <a class="dropdown-item" href="#">Counter Strike</a>
+                        <a class="dropdown-item" href="#">League of Legends</a> 
                     </div>
               </li>
               <li class="nav-item">
-                    <a class="nav-link active" href="<?php echo base_url()."index.php/Home/noticias/"; ?>">Noticias</a>
+                    <a class="nav-link active" href="#">Noticias</a>
               </li>
               <?php
                 if(!$this->session->userdata('usuario')){
