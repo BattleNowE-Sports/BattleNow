@@ -6,10 +6,14 @@ class Home extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Usuarios');
+        $this->load->model('Competicion');
+        $this->load->model('Noticia');
+        $estilo = "";
     }	
 
     //Codificado por Gonzalo Fernández
 	public function index(){
+        $estilo = "css/index.css";
 		$this->load->view('header_view');
         $this->load->view('index_view');
         $this->load->view('footer_view');
@@ -67,5 +71,54 @@ class Home extends CI_Controller {
             $this->session->set_flashdata('Corre','Registrado con exito!!!');
             redirect('Home/login');      	
         }
-	}	
+	}
+    
+    //Codificado por Sergio Cruz
+    public function cerrarS(){
+        $this->session->sess_destroy('info');
+        redirect('Home');
+    }
+    
+    //Codificado por Gonzalo Fernández
+    public function verNoticias(){
+        //$estilo = "css/noticias.css";
+        $not = new Noticia();
+        $noticias['noticia'] = $not->mostrarNoticias();
+		$this->load->view('header_view');
+        $this->load->view('noticias_view',$noticias);
+        $this->load->view('footer_view');
+	}
+    
+    //Codificado por Sergio Cruz
+    public function verInfoPartido(){
+        $c = new Competicion();
+        $cod = $this->uri->segment(3);
+        $data['partido'] = $c->sacarInfoPartido($cod);
+
+        $this->load->view('header_view');
+        $this->load->view('infopartido_view',$data);
+        $this->load->view('footer_view');
+    }
+    
+    //Codificado por Sergio Cruz
+    public function partidas(){
+        $usu = new Competicion();
+        $juego = $this->uri->segment(3);
+
+        if($juego == "Todo"){
+            $res = $usu->BuscarTotsJuegos();
+            $data['juegos'] = $res;
+            $this->load->view('header_view');
+            $this->load->view('partidas_view',$data);
+            $this->load->view('footer_view');
+        }else{
+            $resu = $usu->BuscarPorJuego($juego);
+            $array = array();
+            foreach ($resu as $n) {
+
+            }
+        }
+    }
+    
+    
 }

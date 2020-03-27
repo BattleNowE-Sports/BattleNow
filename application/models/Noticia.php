@@ -1,7 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+//Codificado por Gonzalo Fernández
 class Noticia extends CI_Model{
+    
+    private $id;
+    private $titulo;
+    private $texto;
+    private $textoRecortado;
+    private $imagen;
+    private $redactor;
+    
+    public function __construct() {
+        parent::__construct();
+    }
     
     public function nuevaNoticia($noticia){
         $this->db->insert('noticias',$noticia);
@@ -21,7 +32,7 @@ class Noticia extends CI_Model{
         $this->db->from('noticias');
         $query = $this->db->get();
         $resultado = $query->result_array();
-        return $resultado;
+        return $resultado; 
     }
     
     public function mostrarMisNoticias($usuario){
@@ -31,18 +42,6 @@ class Noticia extends CI_Model{
         $query = $this->db->get();
         $resultado = $query->result_array();
         return $resultado;
-    }
-
-    public function filtrarPorLiga($c,$p){
-
-    }
-    
-    public function filtrarPorEquipo($c,$p){
-
-    }
-    
-    public function filtrarPorJugador($c,$p){
-
     }
 
 }
