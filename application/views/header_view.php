@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
@@ -20,28 +19,26 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/estiloGeneral.css">
 </head>
 <body>
-    <header class="pt-md-2">
-        <hgroup class="text-center text-white">
-            <img src="<?php echo base_url(); ?>img/logoBueno_1.png" class="img-fluid" id="logo">
-        </hgroup>
-        <hr>
-            <ul class="nav">
-              <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="<?php echo base_url()."index.php/Home/index"; ?>">Battle Now</a>
-              </li>
-              <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Call of Duty</a>
-                        <a class="dropdown-item" href="#">Clash Royale</a>
-                        <a class="dropdown-item" href="#">Counter Strike</a>
-                        <a class="dropdown-item" href="#">League of Legends</a> 
-                    </div>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link active" href="#">Noticias</a>
-              </li>
-              <?php
+
+    <div id="encabezado">
+        <img src="<?php echo base_url(); ?>img/logoBueno_1.png" class="img-fluid" id="logo">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active navbar-brand" href="<?php echo base_url()."index.php/Home/index"; ?>">Battle Now</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Call of Duty</a>
+                    <a class="dropdown-item" href="#">Clash Royale</a>
+                    <a class="dropdown-item" href="#">Counter Strike</a>
+                    <a class="dropdown-item" href="#">League of Legends</a> 
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Noticias</a>
+            </li>
+            <?php
                 if(!$this->session->userdata('usuario')){
                     echo "<li class='nav-item' id='sinRegistrar'>";
                         echo "<a class='nav-link active' href='http://localhost/BattleNow/index.php/Home/login/'>Inicio de Sesion / Registro</a>";
@@ -64,5 +61,6 @@
                 echo "</li>";
               ?>
                         
-            </ul>
-    </header>
+        </ul>
+    </div>
+    <div id="cuerpo">

@@ -5,16 +5,17 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
-header{
+#encabezado{
     background-color: #000000;
     float: left;
     position: relative;
     width: 100%;
-    height: 20%;
+    text-align: center;
 }
 
-hgroup{
-    height: 20%;
+#logo{
+    height: 25%;
+    width: 25%;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -24,31 +25,29 @@ h1,h2,h3,h4,h5,h6{
 .nav,.nav-link{
     background-color: #b5a269;
     color: white;
-    width: 100%;
-    height: 10%;
 }
 
 .nav-link:hover{
     color: #343a40;
 }
 
-article{
+#cuerpo{
     float: left;
     position: relative;
     text-align: center;
+    width: 100%;
 }
 
-footer{
+.imagencarrusel {
+    width: 100%;
+    height: 10%;
+}
+
+#pie{
     background-color: #b5a269;
     color: white;
     text-align: right;
     float: left;
     position: relative;
     width: 100%;
-    height: 20%;
-}
-
-#logo{
-    height: 25%;
-    width: 25%;
 }
