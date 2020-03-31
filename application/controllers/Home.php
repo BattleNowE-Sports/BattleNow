@@ -25,46 +25,12 @@ class Home extends CI_Controller {
         $this->load->view('login_view');       
 	}
 
-<<<<<<< HEAD
     //Codificado por Sergio Cruz
-=======
-  public function cerrarS(){
-        $this->session->sess_destroy('info');
-        redirect('Home');
-  }
-
-  public function partidas(){
-    $usu = new Usuarios();
-    $juego = $this->uri->segment(3);
-
-    if($juego == "Todo"){
-       $res = $usu->BuscarTotsJuegos();
-       $data['juegos'] = $res;
-       $this->load->view('header_view');
-       $this->load->view('partidas_view',$data);
-       $this->load->view('footer_view');
-    }else{
-      $resu = $usu->BuscarParJuego($juego);
-      $array = array();
-      foreach ($resu as $n) {
-        
-      }
-    }
-
-  }
-
->>>>>>> master
 	public function loginBD(){
         $usu = new Usuarios();
 		$cU = $this->input->post('ucher');
 		$pas = $this->input->post('pass');
-<<<<<<< HEAD
-        
         if($this->input->post('modo') == "corr"){
-=======
-
-       if($this->input->post('modo') == "corr"){
->>>>>>> master
             $res = $usu->IniciarSBDCorr($cU,$pas);
             if($res == NULL){
                 $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
@@ -73,15 +39,9 @@ class Home extends CI_Controller {
                 $this->session->set_userdata('usuario',$res);
                 redirect('Home/index');
             }
-<<<<<<< HEAD
         }else{
             if($this->input->post('modo') == "usu"){
                 $res = $usu->IniciarSBDUsu($cU,$pas);	
-=======
-       }else{
-       	    if($this->input->post('modo') == "usu"){
-       	        $res = $usu->IniciarSBDUsu($cU,$pas);	
->>>>>>> master
                 if($res == NULL){
                     $this->session->set_flashdata('ErrorInic','Ha ocurrido un error en el inicio de sesion, comprueba los datos introducidos o intentalo de nuevo más tarde');
                     redirect('Home/login');
@@ -89,7 +49,6 @@ class Home extends CI_Controller {
                     $this->session->set_userdata('usuario',$cU);
                     redirect('Home/index');
                 }
-<<<<<<< HEAD
             }
         }
     }
@@ -144,7 +103,6 @@ class Home extends CI_Controller {
     public function partidas(){
         $usu = new Competicion();
         $juego = $this->uri->segment(3);
-
         if($juego == "Todo"){
             $res = $usu->BuscarTotsJuegos();
             $data['juegos'] = $res;
@@ -160,29 +118,4 @@ class Home extends CI_Controller {
         }
     }
     
-    
-=======
-
-       	    }
-       }
-	}
-	public function registrarBD(){
-	  $usu = new Usuarios();
-      
-      $datos['usuario'] = Array(
-           'User' => $this->input->post('user'),
-           'Pass' => $this->input->post('contra'),
-           'Correo' => $this->input->post('correo')
-      );
-
-      $res = $usu->anadirUsuario($datos['usuario']);
-      if($res == 0){
-      	$this->session->set_flashdata('ErrorAn','Ha ocurrido un error a la hora de registrarte, intentalo de nuevo más tarde');
-      	redirect('Home/login');
-      }else{
-      	$this->session->set_flashdata('Corre','Registrado con exito!!!');
-      	redirect('Home/login');      	
-      }
-	}	
->>>>>>> master
 }
