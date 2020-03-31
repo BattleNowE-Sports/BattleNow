@@ -1,0 +1,18 @@
+Hola Yolanda,
+
+Te adjunto este texto, en la muestra del proyecto para
+aclarar unas cuestiones antes de que entres a revisar el código.
+
+En esta muestra no hemos dejado constancia del todo que parte ha hecho cada uno,
+más alla de los métodos del único controlador que manejamos en la aplicación de momento.
+Para poder ver la progresión real tanto de Sergio como mía puedes entrar en nuestro 
+repositorio de GitHub, no obstante iremos marcando en líneas de comentarios que parte ha
+hecho cada uno a partir de ahora, te dejo el enlace a continuación. 
+
+https://github.com/BattleNowE-Sports/BattleNow
+
+De momento no tenemos más que unas pocas páginas en html,css y/o bootstrap pero ya 
+tenemos pensado como queremos implementar JavaScript y Jquery según avancemos con el diseño 
+y la funcionalidad de la aplicación.
+
+ 

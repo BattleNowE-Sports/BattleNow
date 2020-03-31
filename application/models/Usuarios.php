@@ -29,6 +29,40 @@ class Usuarios extends CI_Model{
        return $resultado;
    }
 
+   public function BuscarTotsJuegos(){
+      $this->db->select('DISTINCT(Juego)');
+      $this->db->from('ligas');
+      $query = $this->db->get();
+      $resultado = $query->result_array();
+      return $resultado;      
+   }
+
+   public function BuscarPorJuego($cod){
+      $this->db->select('Nombre');
+      $this->db->from('liga');
+      $this->db->where('Juego',$cod);
+      $query = $this->db->get();
+      $resultado = $query->result_array();
+      return $resultado;      
+   }
+
+   public function buscarLigas($j){
+      $this->db->select('Abreviatura');
+      $this->db->from('ligas');
+      $this->db->where('Juego',$j);
+      $query = $this->db->get();
+      $resultado = $query->result_array();
+      return $resultado;   
+   }
+
+   public function sacarPartidos($b){
+     $this->db->select('*');
+     $this->db->from('partidos');
+     $this->db->where('Liga',$b);
+     $query = $this->db->get();
+     $resultado = $query->result_array();
+     return $resultado;   
+   }
 
 }
 ?>	

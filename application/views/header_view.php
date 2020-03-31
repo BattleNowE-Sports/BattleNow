@@ -27,6 +27,7 @@
                 <a class="nav-link active navbar-brand" href="<?php echo base_url()."index.php/Home/index"; ?>">Battle Now</a>
             </li>
             <li class="nav-item dropdown">
+<<<<<<< HEAD
                 <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="<?php echo base_url()."index.php/Home/partidas/Todo"; ?>" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/COD"; ?>">Call of Duty</a>
@@ -37,6 +38,18 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="<?php echo base_url()."index.php/Home/verNoticias/"; ?>">Noticias</a>
+=======
+                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Call of Duty</a>
+                    <a class="dropdown-item" href="#">Clash Royale</a>
+                    <a class="dropdown-item" href="#">Counter Strike</a>
+                    <a class="dropdown-item" href="#">League of Legends</a> 
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Noticias</a>
+>>>>>>> master
             </li>
             <?php
                 if(!$this->session->userdata('usuario')){
