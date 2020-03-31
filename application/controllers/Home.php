@@ -8,12 +8,10 @@ class Home extends CI_Controller {
         $this->load->model('Usuarios');
         $this->load->model('Competicion');
         $this->load->model('Noticia');
-        $estilo = "";
     }	
 
     //Codificado por Gonzalo Fernández
 	public function index(){
-        $estilo = "css/index.css";
 		$this->load->view('header_view');
         $this->load->view('index_view');
         $this->load->view('footer_view');
@@ -80,13 +78,22 @@ class Home extends CI_Controller {
     
     //Codificado por Gonzalo Fernández
     public function verNoticias(){
-        //$estilo = "css/noticias.css";
         $not = new Noticia();
         $noticias['noticia'] = $not->mostrarNoticias();
 		$this->load->view('header_view');
         $this->load->view('noticias_view',$noticias);
         $this->load->view('footer_view');
 	}
+    
+    //Codificado por Gonzalo Fernández
+    public function verNoticia(){
+        $not = new Noticia();
+        $identificador = $this->uri->segment(3);
+        $noticias['noticia'] = $not->mostrarNoticia($identificador);
+		$this->load->view('header_view');
+        $this->load->view('noticia_view',$noticias);
+        $this->load->view('footer_view');
+    }
     
     //Codificado por Sergio Cruz
     public function verInfoPartido(){

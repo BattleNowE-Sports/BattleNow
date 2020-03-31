@@ -1,13 +1,18 @@
-<?php 
-foreach ($noticias as $noticia){?>
-<div class="col-md-4">
+<head>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/noticias.css">
+</head>
+<?php
+foreach ($noticia as $not){?>
+<div class="col-md-3">
     <div class="card">
-        <img class="card-img-top img-fluid" src="<?php echo base_url(); echo $noticia['imagen']; ?>" alt="Card image cap">
+        <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>img/<?php echo $not['Imagen']; ?>" alt="Card image cap">
         <div class="card-block">
-            <h4 class="card-title"><?php echo $noticia['titulo']; ?></h4>
-            <p class="card-text"><?php echo $noticia['textoRecortado']; ?></p>
-            <a class="btn btn-danger" href="<?php echo base_url() . "index.php/viaje/confirmarReserva/" . $indice?>">Ir a la noticia</a>
+            <h4 class="card-title"><?php echo $not['Titulo']; ?></h4>
+            <p class="card-text"><?php echo $not['TextoRecortado']; ?>...</p>
+            <a class="btn btn-danger" href="<?php echo base_url() . "index.php/Home/verNoticia/" . $not['ID']?>">Ir a la noticia</a>
         </div>
     </div>
 </div>
-<?php}?>
+<?php
+}
+?>
