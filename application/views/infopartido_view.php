@@ -14,8 +14,8 @@
        	  $jugadores = $c->sacarJugadores($l["CODEq"]);
        	  $array = array();
        	  $this->session->set_userdata('Players1',$array);
+       	   $p = $this->session->userdata('Players1');
        	    foreach ($jugadores as $a) {
-       	     $p = $this->session->userdata('Players1');
        	     $Jugador = array(
                      'user' => $a["Nick"],
                      'nom' => $a["Nombre"],
@@ -33,8 +33,8 @@
        	  $jugadores = $c->sacarJugadores($l["CODEq"]);
        	  $array = array();
        	  $this->session->set_userdata('Players2',$array);
+       	  $p = $this->session->userdata('Players2');
        	    foreach ($jugadores as $a) {
-       	     $p = $this->session->userdata('Players2');
        	     $Jugador = array(
                      'user' => $a["Nick"],
                      'nom' => $a["Nombre"],
@@ -51,30 +51,38 @@
 	?>
  <h1>Hola, bienvenido al partido de <?= $b["Equipo1"] ?> vs <?= $b["Equipo2"] ?> </h1>
  <p>
- 	<div>
+ 	<div style="">
  	<img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo1'])?>.png">
+ 	<div>
  	<?php
  	 $pl1 = $this->session->userdata('Players1');
        foreach ($pl1 as $p) {
       $jug = $p["user"]; 
-       	 echo "<select>";
-       	 echo "<option> $jug </option>";
-       	 echo "</select>";
+         echo "<div>";
+       	 echo "<td>";
+       	 echo "<tr> $jug </tr>";
+       	 echo "</td>";
+       	 echo "</div>";
        }
  	?>
     </div>
+    </div>
  	vs
-    <div>
+    <div style="">
  	<img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo2'])?>.png">
+ 	<div>
  	<?php
  	 $pl2 = $this->session->userdata('Players2');
        foreach ($pl2 as $p) {
-      $jug = $p["user"]; 
-       	 echo "<select>";
-       	 echo "<option> $jug </option>";
-       	 echo "</select>";
+      $jug = $p["user"];
+         echo "<div>"; 
+       	 echo "<td>";
+       	 echo "<tr> $jug </tr>";
+       	 echo "</td>";
+       	 echo "</div>";
        }
  	?>
+ </div>
  </div>
  </p>
  <br>
@@ -83,6 +91,9 @@
  <br>
 
  	<?php
+ 	      $array = array();
+          $this->session->set_userdata('Players1',$array);
+          $this->session->set_userdata('Players2',$array);
       }
 	?>
 </body>
