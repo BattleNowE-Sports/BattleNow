@@ -83,7 +83,7 @@ class Home extends CI_Controller {
         //$estilo = "css/noticias.css";
         $not = new Noticia();
         $noticias['noticia'] = $not->mostrarNoticias();
-		$this->load->view('header_view');
+	    	$this->load->view('header_view');
         $this->load->view('noticias_view',$noticias);
         $this->load->view('footer_view');
 	}

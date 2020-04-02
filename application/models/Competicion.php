@@ -47,5 +47,33 @@ class Competicion extends CI_Model{
      return $resultado;        
    }
 
+   public function sacarJuego($cod){
+    $this->db->select('Juego');
+    $this->db->from('ligas');
+    $this->db->where('CODLiga',$cod);
+    $consulta = $this->db->get();
+    $resultado = $consulta->result_array();
+    return $resultado;
+   }
+
+   public function sacarCodigoEquipo($nom,$ju){
+    $this->db->select('CODEq');
+    $this->db->from('equipos');
+    $this->db->where('Nombre',$nom);
+    $this->db->where('Juego',$ju);
+    $consulta = $this->db->get();
+    $resultado = $consulta->result_array();
+    return $resultado;
+   }
+
+   public function sacarJugadores($cod){
+    $this->db->select('*');
+    $this->db->from('jugadores');
+    $this->db->where('Equipo',$cod);
+    $consulta = $this->db->get();
+    $resultado = $consulta->result_array();
+    return $resultado;   
+   }
+
 }
 ?>
