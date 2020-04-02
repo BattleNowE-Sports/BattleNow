@@ -51,37 +51,53 @@
 	?>
  <h1>Hola, bienvenido al partido de <?= $b["Equipo1"] ?> vs <?= $b["Equipo2"] ?> </h1>
  <p>
- 	<div style="">
- 	<img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo1'])?>.png">
+ 	<div class="row">
+ 	<div class="col-sm-4">
+ 	<table>	
+    <tr>
+ 	<th><img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo1'])?>.png"></th>
+    </tr>
  	<div>
- 	<?php
+    <?php
  	 $pl1 = $this->session->userdata('Players1');
        foreach ($pl1 as $p) {
       $jug = $p["user"]; 
          echo "<div>";
-       	 echo "<td>";
-       	 echo "<tr> $jug </tr>";
-       	 echo "</td>";
+       	 echo "<tr>";
+       	 echo "<td> $jug </td>";
+       	 echo "</tr>";
        	 echo "</div>";
        }
  	?>
     </div>
+    </table>
     </div>
- 	vs
-    <div style="">
- 	<img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo2'])?>.png">
- 	<div>
- 	<?php
+ 	<div class="col-sm-4">
+     <?php
+         echo "<h3> $b[ResEq1]  :  $b[ResEq2] </h3>";
+         echo "<h6> $b[Fecha] - $b[Hora]</h6>";
+
+     	?>
+     </div>
+    <div class="col-sm-4">
+    	<table>
+         <tr>
+ 	    <th><img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo2'])?>.png"></th>
+         </tr>
+ <div>
+  <?php
  	 $pl2 = $this->session->userdata('Players2');
        foreach ($pl2 as $p) {
-      $jug = $p["user"];
-         echo "<div>"; 
-       	 echo "<td>";
-       	 echo "<tr> $jug </tr>";
-       	 echo "</td>";
+      $jug = $p["user"]; 
+         echo "<div>";
+       	 echo "<tr>";
+       	 echo "<td> $jug </td>";
+       	 echo "</tr>";
        	 echo "</div>";
        }
  	?>
+  </div>
+  </table>	
  </div>
  </div>
  </p>
