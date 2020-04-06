@@ -27,8 +27,8 @@
           $l = $u->buscarLigas($j["Juego"]);
           $array = array();
           $this->session->set_userdata('infoP',$array);
-            foreach ($l as $n) {
-            	$par = $this->session->userdata('infoP');
+          $par = $this->session->userdata('infoP');
+            foreach ($l as $n) {            	
             	$p = $u->sacarPartidos($n["CODLiga"]);
                 foreach ($p as $datos) {
                    $partidoSac = array(
