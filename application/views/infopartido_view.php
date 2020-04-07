@@ -98,7 +98,7 @@
        foreach ($mapas as $m) {
       echo "<br><br>";
        echo "<div>";
-       echo "<h4>Mapa $i </h4>";
+       echo "<h4>Mapa $i - $m </h4>";
        ?>
          <img width="400px" height="200px"  src="<?php echo base_url(); ?>img/mapas/<?= "$m" ?>"></a>
        <?php
@@ -107,6 +107,8 @@
      }
      }
       ?>
+      <br><br><br></br>
+      <hr>
      </div>
     <div class="col-sm-4" style="text-align: left;">
          <div>
@@ -130,10 +132,16 @@
  </div>
  </div>
  </p>
- <br>
- <br>
- <br>
- <br>
+
+<h1>Informacion adicional del partido</h1>
+<br><br>
+<h5>Este partido esta siendo disputado en <?= $b["CODLiga"]  ?> </h5>
+<div style="width: 500px;height: 300px;background-color: orange;">
+
+
+</div>
+
+
 
  	<?php
  	      $array = array();
