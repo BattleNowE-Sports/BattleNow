@@ -26,7 +26,9 @@
                      'apellidos' => $a["Apellidos"],
                      'edad' => $a["Edad"],
                      'palmares' => $a["Palmares"],
-                     'equipo' => $a["Equipo"]                                                            
+                     'equipo' => $a["Equipo"],
+                     'imag' => $a["Imagen"],
+                     'tit' => $a["Titularidad"]                                                              
                     );
             	array_push($p, $Jugador);
                 }
@@ -46,7 +48,8 @@
                      'edad' => $a["Edad"],
                      'palmares' => $a["Palmares"],
                      'equipo' => $a["Equipo"],
-                     'img' => $a["Imagen"]                                                            
+                     'imag' => $a["Imagen"],
+                     'tit' => $a["Titularidad"]                                                            
                     );
             	array_push($p, $Jugador);
                 }
@@ -62,31 +65,46 @@
  	<th><img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo1'])?>.png"></th>
     </div>
  	<div>
-    <?php
+    <br><br>
+  <?php
  	 $pl1 = $this->session->userdata('Players1');
        foreach ($pl1 as $p) {
+        if($p["tit"] == "T"){
       $jug = $p["user"];
-         echo "<div>";
-       	 echo "<h3> $jug </h3>";
+         echo "<div style='text-align: right;'>";
+  ?>
+    <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>"></a>
+  <?php    
+       	 echo "<h3 style= 'color: orange;'> $jug </h3>";
        	 echo "</div>";
+        }
        }
  	?>
     </div>
     </div>
  	<div class="col-sm-4">
      <?php
-         echo "<h3> $b[ResEq1]  :  $b[ResEq2] </h3>";
+         echo "<h1> $b[ResEq1]  :  $b[ResEq2] </h1>";
          echo "<h6> $b[Fecha] - $b[Hora]</h6>";
      	?>
       <br><br><br>
       <hr>
       <br>
       <?php 
+      if(!$this->session->userdata('mapas')){
+      }else{
        $mapas = $this->session->userdata('mapas');
+       $i = 1;
        foreach ($mapas as $m) {
+      echo "<br><br>";
        echo "<div>";
-       echo "<h4>$m</h4>";
+       echo "<h4>Mapa $i </h4>";
+       ?>
+         <img width="400px" height="200px"  src="<?php echo base_url(); ?>img/mapas/<?= "$m" ?>"></a>
+       <?php
        echo "</div>";
+       $i++;
+     }
      }
       ?>
      </div>
@@ -95,14 +113,16 @@
  	    <th><img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo2'])?>.png"></th>
          </div>
  <div>
+  <br><br>
   <?php
  	 $pl2 = $this->session->userdata('Players2');
        foreach ($pl2 as $p) {
       $jug = $p["user"]; 
-      $img = "base_url().'img/jugadores/$p[img]'.";
          echo "<div>";
-         echo "<img src=".$img.">";
-       	 echo "<h3> $jug </h3>";
+   ?>      
+         <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>" ></a>
+   <?php      
+       	 echo "<h3 style= 'color: orange;'> $jug </h3>";
        	 echo "</div>";
        }
  	?>
