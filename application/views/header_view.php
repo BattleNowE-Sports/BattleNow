@@ -57,6 +57,7 @@
                             echo "<div class='dropdown-divider'></div>";
                             echo "<a class='dropdown-item' href='http://localhost/BattleNow/index.php/Home/cerrarS/'>Cerrar Sesión</a>";  
                         echo "</div>";
+                    
                 }
                 echo "</li>";
               ?>

@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Informacion del partido</title>
+  <style type="text/css">
+  </style>
 </head>
 <body>
 	<?php
@@ -135,11 +137,22 @@
 
 <h1>Informacion adicional del partido</h1>
 <br><br>
-<h5>Este partido esta siendo disputado en <?= $b["CODLiga"]  ?> </h5>
+<center>
+<h5>Este partido esta siendo disputado en <?= substr($b["CODLiga"],0,3)  ?> </h5>
 <div style="width: 500px;height: 300px;background-color: orange;">
+  <div class="row">
+    <div class="col-sm-4">
 
+    </div>
+    <div class="col-sm-4">
+    </div>    
+    <div class="col-sm-4">
 
+    </div>
+  </div>
 </div>
+</center>
+<br><br>
 
 
 
