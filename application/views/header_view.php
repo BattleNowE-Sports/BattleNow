@@ -27,6 +27,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="<?php echo base_url()."index.php/Home/partidas/Todo"; ?>" role="button" aria-haspopup="true" aria-expanded="false" name="eleccion" onmouseover="cambiaCarrusel()">Partidas</a>
                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/Todo"; ?>">Todo</a>
                     <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/COD"; ?>">Call of Duty</a>
                     <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/CR"; ?>">Clash Royale</a>
                     <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/CSGO"; ?>">Counter Strike</a>
