@@ -20,13 +20,12 @@
 </head>
 <body>
     <div id="encabezado">
-        <img src="<?php echo base_url(); ?>img/logoBueno_1.png" class="img-fluid" id="logo">
         <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link active navbar-brand" href="<?php echo base_url()."index.php/Home/index"; ?>">Battle Now</a>
+            <li class="nav-item" id="principal">
+                <a href="<?php echo base_url()."index.php/Home/index"; ?>" name="eleccion"><img src="<?php echo base_url(); ?>img/logoDefinitivo.png" class="img-fluid" id="logo"></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Partidas</a>
+                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="<?php echo base_url()."index.php/Home/partidas/Todo"; ?>" role="button" aria-haspopup="true" aria-expanded="false" name="eleccion" onmouseover="cambiaCarrusel()">Partidas</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/Todo"; ?>">Todo</a>
                     <a class="dropdown-item" href="<?php echo base_url()."index.php/Home/partidas/COD"; ?>">Call of Duty</a>
@@ -36,7 +35,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="<?php echo base_url()."index.php/Home/verNoticias/"; ?>">Noticias</a>
+                <a class="nav-link active" href="<?php echo base_url()."index.php/Home/verNoticias/"; ?>" name="eleccion">Noticias</a>
             </li>
             <?php
                 if(!$this->session->userdata('usuario')){
@@ -45,7 +44,7 @@
                 }
                 if($this->session->userdata('usuario')){
                     echo "<li class='nav-item dropdown' id='registrado'>";
-                        echo "<a class='nav-link dropdown-toggle active pull-xs-right' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>";
+                        echo "<a class='nav-link dropdown-toggle active pull-xs-right' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false' name='eleccion'>";
                         echo $this->session->userdata('usuario');
                         echo "</a>";             
                         echo "<div class='dropdown-menu'>";
@@ -63,4 +62,4 @@
                         
         </ul>
     </div>
-    <div id="cuerpo">
+    <div id="cuerpo" class="col-md-10 offset-md-1">

@@ -24,7 +24,8 @@ class Noticia extends CI_Model{
         $this->db->from('noticias');
         $this->db->where('ID',$idNoticia);
         $query = $this->db->get();               
-        return $query->row();
+        $resultado = $query->result_array();
+        return $resultado;
     } 
     
     public function mostrarNoticias(){
