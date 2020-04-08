@@ -13,3 +13,4 @@ foreach ($noticia as $not){?>
 <?php
 }
 ?>
+

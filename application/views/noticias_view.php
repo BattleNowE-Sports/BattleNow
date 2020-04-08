@@ -1,8 +1,11 @@
 <head>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/noticias.css">
 </head>
+<br><br>
+<div class="row">
 <?php
 foreach ($noticia as $not){?>
+	<br><br>
 <div class="col-md-3">
     <div class="card">
         <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>img/<?php echo $not['Imagen']; ?>" alt="Card image cap">
@@ -16,3 +19,5 @@ foreach ($noticia as $not){?>
 <?php
 }
 ?>
+</div>
+<br><br>

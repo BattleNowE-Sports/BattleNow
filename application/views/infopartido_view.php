@@ -102,7 +102,7 @@
        echo "<div>";
        echo "<h4>Mapa $i - $m </h4>";
        ?>
-         <img width="400px" height="200px"  src="<?php echo base_url(); ?>img/mapas/<?= "$m" ?>"></a>
+         <img width="80%" height="200px"  src="<?php echo base_url(); ?>img/mapas/<?= "$m" ?>"></a>
        <?php
        echo "</div>";
        $i++;
