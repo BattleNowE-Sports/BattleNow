@@ -124,5 +124,14 @@ class Home extends CI_Controller {
             }
         }
     }
+
+    public function verInfoPlayer(){
+        $c = new Competicion();
+        $player = $this->uri->segment(3);
+        $data['jugador'] = $c->sacarInfoPlayer($player);
+        $this->load->view('header_view');
+        $this->load->view('player_view',$data);
+        $this->load->view('footer_view');
+    }
     
 }

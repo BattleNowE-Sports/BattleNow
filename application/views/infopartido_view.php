@@ -27,7 +27,7 @@
                      'nom' => $a["Nombre"],
                      'apellidos' => $a["Apellidos"],
                      'edad' => $a["Edad"],
-                     'palmares' => $a["Palmares"],
+                     'desc' => $a["Descripcion"],
                      'equipo' => $a["Equipo"],
                      'imag' => $a["Imagen"],
                      'tit' => $a["Titularidad"]                                                              
@@ -48,7 +48,7 @@
                      'nom' => $a["Nombre"],
                      'apellidos' => $a["Apellidos"],
                      'edad' => $a["Edad"],
-                     'palmares' => $a["Palmares"],
+                     'desc' => $a["Descripcion"],
                      'equipo' => $a["Equipo"],
                      'imag' => $a["Imagen"],
                      'tit' => $a["Titularidad"]                                                            
@@ -73,15 +73,21 @@
        foreach ($pl1 as $p) {
         if($p["tit"] == "T"){
       $jug = $p["user"];
+   ?>
+   <a href="<?php echo base_url()."index.php/Home/verInfoPlayer/$p[user]"; ?>">   
+   <?php
          echo "<div style='text-align: right;'>";
-  ?>
+   ?>
     <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>"></a>
   <?php    
        	 echo "<h3 style= 'color: orange;'> $jug </h3>";
        	 echo "</div>";
+   ?>      
+    </a>
+   <?php 
         }
        }
- 	?>
+ 	 ?>
     </div>
     </div>
  	<div class="col-sm-4">
@@ -124,7 +130,7 @@
       $jug = $p["user"]; 
          echo "<div>";
    ?>      
-         <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>" ></a>
+         <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>" >
    <?php      
        	 echo "<h3 style= 'color: orange;'> $jug </h3>";
        	 echo "</div>";
@@ -142,12 +148,10 @@
 <div style="width: 500px;height: 300px;background-color: orange;">
   <div class="row">
     <div class="col-sm-4">
-
     </div>
     <div class="col-sm-4">
     </div>    
     <div class="col-sm-4">
-
     </div>
   </div>
 </div>
