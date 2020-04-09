@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/noticias.css">
 </head>
+<div class="row">
 <?php
 foreach ($noticia as $not){?>
 <div class="col-md-3">
@@ -16,3 +17,4 @@ foreach ($noticia as $not){?>
 <?php
 }
 ?>
+</div>

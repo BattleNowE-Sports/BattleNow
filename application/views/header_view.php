@@ -35,6 +35,9 @@
                 </div>
             </li>
             <li class="nav-item">
+                <a class="nav-link active" href="<?php echo base_url()."index.php/Home/verEquipos/"; ?>" name="eleccion">Equipos</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link active" href="<?php echo base_url()."index.php/Home/verNoticias/"; ?>" name="eleccion">Noticias</a>
             </li>
             <?php
