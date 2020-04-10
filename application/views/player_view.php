@@ -10,6 +10,7 @@
 	<script type="text/javascript">
      $(document).ready(function(){
         $("#uno").on('mouseenter',function(){
+          $("#info").html("");
             var nom = "<div id='div1' style='height:25%;width:0%;background-color:green'></div>";
             var ed = "<div id='div2' style='height:25%;width:0%;background-color:green'></div>";
             var eq = "<div id='div3' style='height:50%;width:0%;background-color:green'></div>";
@@ -29,11 +30,9 @@
                 $(this).html("Hola");
             });            
         });
-        $("#uno").on('mouseleave',function(){
-            $("#info").html("");
-        });
          
         $("#dos").on('mouseenter',function(){
+          $("#info").html("");
            var n1 = "<div id='d1' style='height:0%;width:20%;background-color:green;float:right'></div>";
            var n2 = "<div id='d2' style='height:0%;width:20%;background-color:green;float:right'></div>";
            var n3 = "<div id='d3' style='height:0%;width:20%;background-color:green;float:right'></div>";
@@ -61,9 +60,6 @@
                 height: '100%' 
             },2000);                                                            
            
-        });
-        $("#dos").on('mouseleave',function(){
-            $("#info").html("");
         }); 
      });
 	</script>
@@ -82,7 +78,7 @@
       	<img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url(); ?>img/info.png">
       </div>
       <div id="dos" style="height: 25%;width: 100%;background-color: purple">
-        <img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url(); ?>img/eq.png">
+        <img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url(); ?>img/Pushing Gaming.png">
       </div>
       <div id="tres" style="height: 25%;width: 100%;background-color: grey"></div>
       <div id="cuatro" style="height: 25%;width: 100%;background-color: orange"></div>	
