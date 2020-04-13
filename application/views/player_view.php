@@ -33,7 +33,18 @@
          
         $("#dos").on('mouseenter',function(){
           $("#info").html("");
-           var n1 = "<div id='d1' style='height:0%;width:20%;background-color:green;float:right'></div>";
+          <?php
+            $c = new Competicion();
+            $num = $c->numPlayers($p["Equipo"]);
+          ?>
+           var numP = 100 / <?php echo $num ?> ; 
+           for (var i = 1; i < numP; i++) {
+              var i = "<div id='i' style='height:0%;width:numP%;background-color:green;float:right'></div>";
+              $("#info").append(i);
+           }
+              
+
+   /*        var n1 = "<div id='d1' style='height:0%;width:20%;background-color:green;float:right'></div>";
            var n2 = "<div id='d2' style='height:0%;width:20%;background-color:green;float:right'></div>";
            var n3 = "<div id='d3' style='height:0%;width:20%;background-color:green;float:right'></div>";
            var n4 = "<div id='d4' style='height:0%;width:20%;background-color:green;float:right'></div>";
@@ -59,7 +70,7 @@
             $('#d5').delay(8000).animate({
                 height: '100%' 
             },2000);                                                            
-           
+           */
         }); 
      });
 	</script>

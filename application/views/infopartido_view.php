@@ -64,7 +64,7 @@
  	<div class="row">
  	<div class="col-sm-4" style="text-align: right;">
     <div>
- 	<th><img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo1'])?>.png"></th>
+ 	<th><img height="200px" width="200px" src="<?php echo base_url(); ?>img/Equipos/<?php echo($b['Equipo1'])?>.png"></th>
     </div>
  	<div>
     <br><br>
@@ -120,7 +120,7 @@
      </div>
     <div class="col-sm-4" style="text-align: left;">
          <div>
- 	    <th><img height="200px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($b['Equipo2'])?>.png"></th>
+ 	    <th><img height="200px" width="200px" src="<?php echo base_url(); ?>img/Equipos/<?php echo($b['Equipo2'])?>.png"></th>
          </div>
  <div>
   <br><br>
