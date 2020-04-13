@@ -4,6 +4,7 @@
 <div class="row">
 <?php
 foreach ($noticia as $not){?>
+	<br><br>
 <div class="col-md-3">
     <div class="card">
         <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>img/<?php echo $not['Imagen']; ?>" alt="Card image cap">

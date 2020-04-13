@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Informacion del partido</title>
+  <style type="text/css">
+  </style>
 </head>
 <body>
 	<?php
@@ -25,7 +27,7 @@
                      'nom' => $a["Nombre"],
                      'apellidos' => $a["Apellidos"],
                      'edad' => $a["Edad"],
-                     'palmares' => $a["Palmares"],
+                     'desc' => $a["Descripcion"],
                      'equipo' => $a["Equipo"],
                      'imag' => $a["Imagen"],
                      'tit' => $a["Titularidad"]                                                              
@@ -46,7 +48,7 @@
                      'nom' => $a["Nombre"],
                      'apellidos' => $a["Apellidos"],
                      'edad' => $a["Edad"],
-                     'palmares' => $a["Palmares"],
+                     'desc' => $a["Descripcion"],
                      'equipo' => $a["Equipo"],
                      'imag' => $a["Imagen"],
                      'tit' => $a["Titularidad"]                                                            
@@ -71,15 +73,21 @@
        foreach ($pl1 as $p) {
         if($p["tit"] == "T"){
       $jug = $p["user"];
+   ?>
+   <a href="<?php echo base_url()."index.php/Home/verInfoPlayer/$p[user]"; ?>">   
+   <?php
          echo "<div style='text-align: right;'>";
-  ?>
+   ?>
     <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>"></a>
   <?php    
        	 echo "<h3 style= 'color: orange;'> $jug </h3>";
        	 echo "</div>";
+   ?>      
+    </a>
+   <?php 
         }
        }
- 	?>
+ 	 ?>
     </div>
     </div>
  	<div class="col-sm-4">
@@ -100,7 +108,7 @@
        echo "<div>";
        echo "<h4>Mapa $i - $m </h4>";
        ?>
-         <img width="400px" height="200px"  src="<?php echo base_url(); ?>img/mapas/<?= "$m" ?>"></a>
+         <img width="80%" height="200px"  src="<?php echo base_url(); ?>img/mapas/<?= "$m" ?>"></a>
        <?php
        echo "</div>";
        $i++;
@@ -122,7 +130,7 @@
       $jug = $p["user"]; 
          echo "<div>";
    ?>      
-         <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>" ></a>
+         <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>" >
    <?php      
        	 echo "<h3 style= 'color: orange;'> $jug </h3>";
        	 echo "</div>";
@@ -135,11 +143,20 @@
 
 <h1>Informacion adicional del partido</h1>
 <br><br>
-<h5>Este partido esta siendo disputado en <?= $b["CODLiga"]  ?> </h5>
+<center>
+<h5>Este partido esta siendo disputado en <?= substr($b["CODLiga"],0,3)  ?> </h5>
 <div style="width: 500px;height: 300px;background-color: orange;">
-
-
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+    </div>    
+    <div class="col-sm-4">
+    </div>
+  </div>
 </div>
+</center>
+<br><br>
 
 
 
