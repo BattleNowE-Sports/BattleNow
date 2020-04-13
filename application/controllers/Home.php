@@ -21,7 +21,8 @@ class Home extends CI_Controller {
     //Codificado por Sergio Cruz
 	public function login(){
 		$this->load->view('header_view');		
-        $this->load->view('login_view');       
+        $this->load->view('login_view');
+        $this->load->view('footer_view');
 	}
 
     //Codificado por Sergio Cruz
@@ -75,6 +76,13 @@ class Home extends CI_Controller {
     public function cerrarS(){
         $this->session->sess_destroy('info');
         redirect('Home');
+    }
+    
+    //Codificado por Gonzalo Fernández
+    public function filtro(){
+        $this->load->view('header_view');
+        $this->load->view('filtro_view');
+        $this->load->view('footer_view');
     }
     
     //Codificado por Gonzalo Fernández

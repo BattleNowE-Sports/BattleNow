@@ -35,7 +35,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="<?php echo base_url()."index.php/Home/verEquipos/"; ?>" name="eleccion">Equipos</a>
+                <a class="nav-link active" href="<?php echo base_url()."index.php/Home/filtro/"; ?>" name="eleccion">Equipos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="<?php echo base_url()."index.php/Home/verNoticias/"; ?>" name="eleccion">Noticias</a>
@@ -65,4 +65,4 @@
                         
         </ul>
     </div>
-    <div id="cuerpo" class="col-md-10 offset-md-1">
+    <div id="cuerpo">
