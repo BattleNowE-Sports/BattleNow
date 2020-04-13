@@ -61,7 +61,7 @@
           <div class="container">
            <div class="row">
             <div class="col-sm-3" style="float: right;">
-               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/".$infoPart[0][eq1].".png"; ?>">   
+               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/Equipos/".$infoPart[0][eq1].".png"; ?>">   
                <h6 class="mine"><?= $infoPart[0]["eq1"] ?></h6>
             </div>
             <div class="col-sm-6">
@@ -69,7 +69,7 @@
              <h6 style="font-size: xx-small;"><?= $infoPart[0]["fecha"] ?> - <?= $infoPart[0]["hora"] ?></h6>
             </div>
             <div class="col-sm-3" style="float: left;">
-               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/".$infoPart[0][eq2].".png"; ?>">
+               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/Equipos/".$infoPart[0][eq2].".png"; ?>">
                <h6 class="mine"><?= $infoPart[0]["eq2"] ?></h6>
             </div>            
            </div>
@@ -83,7 +83,7 @@
           <div class="container">
            <div class="row">
             <div class="col-sm-3" style="float: right;">
-               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/".$infoPart[1][eq1].".png"; ?>">   
+               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/Equipos/".$infoPart[1][eq1].".png"; ?>">   
                <h6 class="mine"><?= $infoPart[1]["eq1"] ?></h6>
             </div>
             <div class="col-sm-6">
@@ -91,7 +91,7 @@
              <h6 style="font-size: xx-small;"><?= $infoPart[1]["fecha"] ?> - <?= $infoPart[1]["hora"] ?></h6>
             </div>
             <div class="col-sm-3" style="float: left;">
-               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/".$infoPart[1][eq2].".png"; ?>">
+               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/Equipos/".$infoPart[1][eq2].".png"; ?>">
                <h6 class="mine"><?= $infoPart[1]["eq2"] ?></h6>
             </div>            
            </div>
@@ -105,7 +105,7 @@
           <div class="container">
            <div class="row">
             <div class="col-sm-3" style="float: right;">
-               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/".$infoPart[2][eq1].".png"; ?>">   
+               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/Equipos/".$infoPart[2][eq1].".png"; ?>">   
                <h6 class="mine"><?= $infoPart[2]["eq1"] ?></h6>
             </div>
             <div class="col-sm-6">
@@ -113,7 +113,7 @@
              <h6 style="font-size: xx-small;"><?= $infoPart[2]["fecha"] ?> - <?= $infoPart[2]["hora"] ?></h6>
             </div>
             <div class="col-sm-3" style="float: left;">
-               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/".$infoPart[2][eq2].".png"; ?>">
+               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/Equipos/".$infoPart[2][eq2].".png"; ?>">
                <h6 class="mine"><?= $infoPart[2]["eq2"] ?></h6>
             </div>            
            </div>
@@ -127,7 +127,7 @@
           <div class="container">
            <div class="row">
             <div class="col-sm-3" style="float: right;">
-               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/".$infoPart[3][eq1].".png"; ?>">   
+               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/Equipos/".$infoPart[3][eq1].".png"; ?>">   
                <h6 class="mine"><?= $infoPart[3]["eq1"] ?></h6>
             </div>
             <div class="col-sm-6">
@@ -135,7 +135,7 @@
              <h6 style="font-size: xx-small;"><?= $infoPart[3]["fecha"] ?> - <?= $infoPart[3]["hora"] ?></h6>
             </div>
             <div class="col-sm-3" style="float: left;">
-               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/".$infoPart[3][eq2].".png"; ?>">
+               <img width="40px" height="40px" style="display: flex;align-items: center;justify-content: center;margin-top: 40%;" src="<?php echo base_url()."img/Equipos/".$infoPart[3][eq2].".png"; ?>">
                <h6 class="mine"><?= $infoPart[3]["eq2"] ?></h6>
             </div>            
            </div>

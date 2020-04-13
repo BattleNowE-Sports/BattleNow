@@ -75,5 +75,22 @@ class Competicion extends CI_Model{
     return $resultado;   
    }
 
+   public function sacarInfoPlayer($nom){
+    $this->db->select('*');
+    $this->db->from('jugadores');
+    $this->db->where('Nick',$nom);
+    $consulta = $this->db->get();
+    $resultado = $consulta->result_array();
+    return $resultado;       
+   }
+
+   public function numPlayers($cod){
+    $this->db->select('*');
+    $this->db->from('jugadores');
+    $this->db->where('Equipo',$cod);
+    $consulta = $this->db->get();
+    return $consulta->num_rows();
+   }
+
 }
 ?>
