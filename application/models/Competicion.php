@@ -91,8 +91,5 @@ class Competicion extends CI_Model{
     $consulta = $this->db->get();
     return $consulta->num_rows();
    }
-
-   
-
 }
 ?>
