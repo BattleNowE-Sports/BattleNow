@@ -39,8 +39,8 @@
           ?>
            var numP = 100 / <?php echo $num ?> ; 
            for (var i = 1; i < numP; i++) {
-              var i = "<div id='i' style='height:0%;width:numP%;background-color:green;float:right'></div>";
-              $("#info").append(i);
+              var div = "<div id='" + i + "' style='height:0%;width:" + numP + "%;background-color:green;float:right'></div>";
+              $("#info").append(div);
            }
               
 
