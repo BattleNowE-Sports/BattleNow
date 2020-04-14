@@ -92,6 +92,12 @@ class Competicion extends CI_Model{
     return $consulta->num_rows();
    }
 
+   public function players($cod,$nick){
+   $cadenaSQL="SELECT * FROM jugadores WHERE Nick != $nick AND Equipo = $cod "; 
+   $registros=$this->db->query($cadenaSQL);  
+   return $registros->result_array();
+   }
+
    
 
 }
