@@ -97,8 +97,5 @@ class Competicion extends CI_Model{
    $registros=$this->db->query($cadenaSQL);  
    return $registros->result_array();    
    }
-
-   
-
 }
 ?>

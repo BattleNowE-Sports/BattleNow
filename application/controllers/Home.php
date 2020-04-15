@@ -8,6 +8,7 @@ class Home extends CI_Controller {
         $this->load->model('Usuarios');
         $this->load->model('Competicion');
         $this->load->model('Noticia');
+        $this->load->model('Equipo');
     }	
 
     //Codificado por Gonzalo Fernández
@@ -20,7 +21,8 @@ class Home extends CI_Controller {
     //Codificado por Sergio Cruz
 	public function login(){
 		$this->load->view('header_view');		
-        $this->load->view('login_view');       
+        $this->load->view('login_view');
+        $this->load->view('footer_view');
 	}
 
     //Codificado por Sergio Cruz
@@ -77,10 +79,37 @@ class Home extends CI_Controller {
     }
     
     //Codificado por Gonzalo Fernández
+    public function filtro(){
+        $this->load->view('header_view');
+        $this->load->view('filtro_view');
+        $this->load->view('footer_view');
+    }
+    
+    //Codificado por Gonzalo Fernández
+    public function verEquipos(){
+        $equ = new Equipo();
+        $equipos['equipo'] = $equ->mostrarEquipos();
+	    $this->load->view('header_view');
+        $this->load->view('equipos_view',$equipos);
+        $this->load->view('footer_view');
+	}
+    
+    //Codificado por Gonzalo Fernández
+    public function verEquipo(){
+        $equ = new Equipo();
+        $identificador = $this->uri->segment(3);
+        $equipos['equipo'] = $equ->redirigirBusqueda($identificador);
+        if(secciones)
+		$this->load->view('header_view');
+        $this->load->view('equipo_view',$equipos);
+        $this->load->view('footer_view');
+    }
+    
+    //Codificado por Gonzalo Fernández
     public function verNoticias(){
         $not = new Noticia();
         $noticias['noticia'] = $not->mostrarNoticias();
-	    	$this->load->view('header_view');
+	    $this->load->view('header_view');
         $this->load->view('noticias_view',$noticias);
         $this->load->view('footer_view');
 	}
