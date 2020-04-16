@@ -3,7 +3,7 @@
  <?php  
    foreach ($jugador as $p) {
    $c = new Competicion();
-   $logo = $c->sacarLogo($p["Nick"]);
+   
  ?>
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
@@ -108,7 +108,7 @@
       	<img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url(); ?>img/info.png">
       </div>
       <div id="dos" style="height: 25%;width: 100%;background-color: purple">
-        <img width="80%" height="80%" src="<?php echo base_url()."img/Equipos/".$logo.".png"; ?>">
+        <img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url(); ?>img/Equipos/dallas.png">
       </div>
       <div id="tres" style="height: 25%;width: 100%;background-color: grey">
         <img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url(); ?>img/stats.png">
