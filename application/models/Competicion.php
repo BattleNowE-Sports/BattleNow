@@ -92,11 +92,17 @@ class Competicion extends CI_Model{
     return $consulta->num_rows();
    }
 
- /*  public function sacarLogo($nick){
-   $cadenaSQL="SELECT logo FROM equipos WHERE CODEq = (SELECT Equipo FROM jugadores WHERE Nick = $nick )"; 
+   public function sacarLogo($nick){
+   $cadenaSQL="SELECT logo FROM equipos WHERE CODEq = (SELECT Equipo FROM jugadores WHERE Nick = '$nick' )"; 
    $registros=$this->db->query($cadenaSQL);  
    return $registros->result_array();    
-   }*/
+   }
+
+   public function PartidosPlayer($cod){  
+   $cadenaSQL="SELECT * FROM partidos WHERE Equipo1 = (SELECT Nombre FROM equipos WHERE CODEq = '$cod') OR Equipo2 = (SELECT Nombre FROM equipos WHERE CODEq = '$cod')"; 
+   $registros=$this->db->query($cadenaSQL);  
+   return $registros->result_array();   
+   }
 
    
 
