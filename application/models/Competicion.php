@@ -56,15 +56,6 @@ class Competicion extends CI_Model{
     return $resultado;
    }
 
-   public function sacarCodigoEquipo($nom,$ju){
-    $this->db->select('CODEq');
-    $this->db->from('equipos');
-    $this->db->where('Nombre',$nom);
-    $this->db->where('Juego',$ju);
-    $consulta = $this->db->get();
-    $resultado = $consulta->result_array();
-    return $resultado;
-   }
 
    public function sacarJugadores($cod){
     $this->db->select('*');
@@ -93,13 +84,13 @@ class Competicion extends CI_Model{
    }
 
    public function sacarLogo($nick){
-   $cadenaSQL="SELECT logo FROM equipos WHERE CODEq = (SELECT Equipo FROM jugadores WHERE Nick = '$nick' )"; 
-   $registros=$this->db->query($cadenaSQL);  
-   return $registros->result_array();    
+   $cadenaSQL="SELECT DISTINCT(logo) FROM equipos WHERE CODEq = (SELECT Equipo FROM jugadores WHERE Nick = '$nick' )"; 
+   $registros=$this->db->query($cadenaSQL);
+   return $registros->result();    
    }
 
    public function PartidosPlayer($cod){  
-   $cadenaSQL="SELECT * FROM partidos WHERE Equipo1 = (SELECT Nombre FROM equipos WHERE CODEq = '$cod') OR Equipo2 = (SELECT Nombre FROM equipos WHERE CODEq = '$cod')"; 
+   $cadenaSQL="SELECT * FROM partidos WHERE Equipo1 = '$cod' OR Equipo2 =  '$cod' "; 
    $registros=$this->db->query($cadenaSQL);  
    return $registros->result_array();   
    }
