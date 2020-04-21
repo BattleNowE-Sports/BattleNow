@@ -5,9 +5,9 @@
 <?php
 foreach ($noticia as $not){?>
 	<br><br>
-<div class="col-md-3">
+<div class="col-sm-6 col-md-3">
     <div class="card">
-        <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>img/<?php echo $not['Imagen']; ?>" alt="Card image cap">
+        <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>img/noticias/<?php echo $not['Imagen']; ?>" alt="Card image cap">
         <div class="card-block">
             <h4 class="card-title"><?php echo $not['Titulo']; ?></h4>
             <p class="card-text"><?php echo $not['TextoRecortado']; ?>...</p>

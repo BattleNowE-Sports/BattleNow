@@ -8,6 +8,14 @@
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 </script>
+<style type="text/css">
+  #par::-webkit-scrollbar {
+    width: 7px;
+  }
+  #par::-webkit-scrollbar-thumb {
+    background-color: orange;
+  }
+</style>
 	<title>Jugadores</title>
 	<script type="text/javascript">
      $(document).ready(function(){
@@ -56,35 +64,6 @@
             }  
 
            }
-              
-
-   /*        var n1 = "<div id='d1' style='height:0%;width:20%;background-color:green;float:right'></div>";
-           var n2 = "<div id='d2' style='height:0%;width:20%;background-color:green;float:right'></div>";
-           var n3 = "<div id='d3' style='height:0%;width:20%;background-color:green;float:right'></div>";
-           var n4 = "<div id='d4' style='height:0%;width:20%;background-color:green;float:right'></div>";
-           var n5 = "<div id='d5' style='height:0%;width:20%;background-color:green;float:right'></div>";
-            $("#info").append(n1);
-            $("#info").append(n2);
-            $("#info").append(n3);
-            $("#info").append(n4);
-            $("#info").append(n5);
-
-            $('#d1').animate({
-                height: '100%' 
-            },2000);  
-            $('#d2').delay(2000).animate({
-                height: '100%' 
-            },2000);  
-            $('#d3').delay(4000).animate({
-                height: '100%' 
-            },2000);  
-            $('#d4').delay(6000).animate({
-                height: '100%' 
-            },2000);  
-            $('#d5').delay(8000).animate({
-                height: '100%' 
-            },2000);                                                            
-           */
         }); 
 
         ('#tres').on('mouseenter',function(){
@@ -108,7 +87,7 @@
       	<img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url(); ?>img/info.png">
       </div>
       <div id="dos" style="height: 25%;width: 100%;background-color: purple">
-        <img width="80%" height="80%" src="<?php echo base_url()."img/Equipos/".$logo.".png"; ?>">
+        <img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url()."img/jugadores/$p[Imagen]"; ?>">
       </div>
       <div id="tres" style="height: 25%;width: 100%;background-color: grey">
         <img style="margin-top: 10%" width="80%" height="80%" src="<?php echo base_url(); ?>img/stats.png">
@@ -122,9 +101,47 @@
     	<div style="background-color: white;width: 80%;height: 80%;margin-left: 10%;" id="info">
     	</div>
      </div>
-	</div>	
+	</div>
+  <div class="row" style="background-color: blue;width: 80%;height: 350px;margin-top: 2%;">
+    <div class="container">
+      <div class="table-responsive" id="par" style="height: 70%;margin-top: 1%;width: 100%;"> 
+        <table class="table">
+          <thead>
+            <tr> 
+              <th>Local</th>
+              <th>Visitante</th>
+              <th>Hora</th>
+              <th>Fecha</th>
+              <th>Liga</th>
+                          
+            </tr>
+          </thead>
+    <tbody>
+      <?php
+       $part = $c->PartidosPlayer($p["Equipo"]);
+       foreach ($part as $i) {
+      ?>
+    <tr style="background-color: green">
+      <td><?= $i["Equipo1"] ?></td>
+      <td><?= $i["Equipo2"] ?></td>
+      <td><?= $i["Hora"] ?></td>
+      <td><?= $i["Fecha"] ?></td>
+      <td><?= $i["CODLiga"] ?></td>
+      
+      <td width="20%"><a href="<?php echo $i['Streaming']; ?>"><img style="float: left;" width="80%" height="40%" src="<?php echo base_url(); ?>img/live.png"></a></td>
+      
+    </tr>
+    <?php
+      }
+    ?>
+    </tbody>          
+        </table>
+      </div>
+    </div>  
+  </div>	
 	<br><br>
  <?php
+   
    }
  ?>	
 </body>
