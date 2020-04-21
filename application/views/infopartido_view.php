@@ -13,11 +13,7 @@
        $mapas = array($b["Mapa1"],$b["Mapa2"],$b["Mapa3"],$b["Mapa4"],$b["Mapa5"]);
        $this->session->set_userdata('mapas',$mapas);
      }
-       $ju = $c->sacarJuego($b["CODLiga"]);
-       foreach ($ju as $j) {
-       	 $codeq1 = $c->sacarCodigoEquipo($b["Equipo1"],$j["Juego"]);
-       	  foreach ($codeq1 as $l) {
-       	  $jugadores = $c->sacarJugadores($l["CODEq"]);
+       	  $jugadores = $c->sacarJugadores($b["Equipo1"]);
        	  $array = array();
        	  $this->session->set_userdata('Players1',$array);
        	   $p = $this->session->userdata('Players1');
@@ -35,14 +31,12 @@
             	array_push($p, $Jugador);
                 }
              $this->session->set_userdata('Players1',$p);
-       	    }
-       	 $codeq2 = $c->sacarCodigoEquipo($b["Equipo2"],$j["Juego"]);
-       	  foreach ($codeq2 as $l) {
-       	  $jugadores = $c->sacarJugadores($l["CODEq"]);
+       	    
        	  $array = array();
        	  $this->session->set_userdata('Players2',$array);
+          $jugadores2 = $c->sacarJugadores($b["Equipo2"]);
        	  $p = $this->session->userdata('Players2');
-       	    foreach ($jugadores as $a) {
+       	    foreach ($jugadores2 as $a) {
        	     $Jugador = array(
                      'user' => $a["Nick"],
                      'nom' => $a["Nombre"],
@@ -56,8 +50,8 @@
             	array_push($p, $Jugador);
                 }
                 $this->session->set_userdata('Players2',$p);       	  	
-       	  }
-       	  }       	  
+       	  
+       	         	  
 	?>
  <h1>Hola, bienvenido al partido de <?= $b["Equipo1"] ?> vs <?= $b["Equipo2"] ?> </h1>
  <p>
@@ -127,9 +121,12 @@
   <?php
  	 $pl2 = $this->session->userdata('Players2');
        foreach ($pl2 as $p) {
-      $jug = $p["user"]; 
+      $jug = $p["user"];
+   ?>     
+  <a href="<?php echo base_url()."index.php/Home/verInfoPlayer/$p[user]"; ?>">  
+   <?php 
          echo "<div>";
-   ?>      
+   ?>    
          <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>" >
    <?php      
        	 echo "<h3 style= 'color: orange;'> $jug </h3>";

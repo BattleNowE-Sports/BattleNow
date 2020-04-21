@@ -23,6 +23,7 @@
 		<?php
     error_reporting(0); 
 		  $u = new Competicion();
+      echo $x = $u->sacarLogo("AdrianMonk");
           foreach ($juegos as $j ) {
           $l = $u->buscarLigas($j["Juego"]);
           $array = array();
@@ -52,6 +53,7 @@
           $p2 = $infoPart[1]["id"];
           $p3 = $infoPart[2]["id"];
           $p4 = $infoPart[3]["id"];
+
 		?>
 	 <tr>	
 		<td><img height="100px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($juego)?>.png"></td>
