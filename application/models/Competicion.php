@@ -83,7 +83,8 @@ class Competicion extends CI_Model{
     }
     
     public function sacarLogo($nick){
-        $cadenaSQL="SELECT DISTINCT(logo) FROM equipos WHERE CODEq = (SELECT Equipo FROM jugadores WHERE Nick = '$nick' )"; $registros=$this->db->query($cadenaSQL);
+        $cadenaSQL="SELECT DISTINCT(logo) FROM equipos WHERE CODEq = (SELECT Equipo FROM jugadores WHERE Nick = '$nick' )"; 
+        $registros=$this->db->query($cadenaSQL);
         return $registros->result();    
     }
 
@@ -92,5 +93,6 @@ class Competicion extends CI_Model{
         $registros=$this->db->query($cadenaSQL);  
         return $registros->result_array();   
     }
+  
 }
 ?>
