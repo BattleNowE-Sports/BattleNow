@@ -13,9 +13,9 @@ class Home extends CI_Controller {
 
     //Codificado por Gonzalo Fernández
 	public function index(){
-		$this->load->view('header_view');
+		
         $this->load->view('index_view');
-        $this->load->view('footer_view');
+        
 	}
 
     //Codificado por Sergio Cruz

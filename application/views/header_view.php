@@ -1,6 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
+    <script type="text/javascript">
+       $('#eq').on('mouseenter',function(){
+         $('#AA').animate({
+                width: '100%' 
+            },2000);
+        });
+    </script>
 <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- Para adaptar a los dispositivos móviles -->
@@ -35,7 +42,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="<?php echo base_url()."index.php/Home/filtro/"; ?>" name="eleccion">Equipos</a>
+                <a class="nav-link active" id="Eq" href="<?php echo base_url()."index.php/Home/filtro/"; ?>" name="eleccion">Equipos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="<?php echo base_url()."index.php/Home/verNoticias/"; ?>" name="eleccion">Noticias</a>

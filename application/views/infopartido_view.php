@@ -6,6 +6,7 @@
   </style>
 </head>
 <body>
+  <br>
 	<?php
 	$c = new Competicion();
     foreach ($partido as $b) {
@@ -127,7 +128,7 @@
    <?php 
          echo "<div>";
    ?>    
-         <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>" >
+         <img width="150px" height="150px" style="background-color: orange;" src="<?php echo base_url(); ?>img/jugadores/<?= "$p[imag]" ?>" ></a>
    <?php      
        	 echo "<h3 style= 'color: orange;'> $jug </h3>";
        	 echo "</div>";

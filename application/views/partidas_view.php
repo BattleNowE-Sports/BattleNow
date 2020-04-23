@@ -23,7 +23,6 @@
 		<?php
     error_reporting(0); 
 		  $u = new Competicion();
-      echo $x = $u->sacarLogo("AdrianMonk");
           foreach ($juegos as $j ) {
           $l = $u->buscarLigas($j["Juego"]);
           $array = array();
@@ -55,11 +54,13 @@
           $p4 = $infoPart[3]["id"];
 
 		?>
+    <br>
+    
 	 <tr>	
 		<td><img height="100px" width="200px" src="<?php echo base_url(); ?>img/<?php echo($juego)?>.png"></td>
       <td>
          <a href="<?php echo base_url()."index.php/Home/verInfoPartido/$p1"; ?>">
-         <div style="height: 100px;width: 250px;background-color: red" id="bo">
+         <div style="height: 100px;width: 100%;background-color: red" id="bo">
           <div class="container">
            <div class="row">
             <div class="col-sm-3" style="float: right;">
@@ -81,7 +82,7 @@
       </td>
         <td>
           <a href="<?php echo base_url()."index.php/Home/verInfoPartido/$p2"; ?>">
-          <div style="height: 100px;width: 250px;background-color: red" id="bo">
+          <div style="height: 100px;width: 100%;background-color: red" id="bo">
           <div class="container">
            <div class="row">
             <div class="col-sm-3" style="float: right;">
@@ -103,7 +104,7 @@
         </td>
         <td>
           <a href="<?php echo base_url()."index.php/Home/verInfoPartido/$p3"; ?>">
-          <div style="height: 100px;width: 250px;background-color: red" id="bo">
+          <div style="height: 100px;width: 100%;background-color: red" id="bo">
           <div class="container">
            <div class="row">
             <div class="col-sm-3" style="float: right;">
@@ -125,7 +126,7 @@
         </td>
         <td>
           <a href="<?php echo base_url()."index.php/Home/verInfoPartido/$p4"; ?>">
-          <div style="height: 100px;width: 250px;background-color: red" id="bo">
+          <div style="height: 100px;width: 100%;background-color: red" id="bo">
           <div class="container">
            <div class="row">
             <div class="col-sm-3" style="float: right;">
@@ -156,6 +157,7 @@
           $this->session->set_userdata('infoP',$array);
           }
      	?>
+
 	</tbody>
 </table>
  </body>
